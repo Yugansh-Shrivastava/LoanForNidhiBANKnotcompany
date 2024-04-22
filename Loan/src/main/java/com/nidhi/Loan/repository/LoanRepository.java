@@ -6,6 +6,8 @@ import com.nidhi.Loan.enums.LoanType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface LoanRepository extends JpaRepository<Loan,Long> {
     int findLoanAmountByLoanId(int loanId);
@@ -17,4 +19,6 @@ public interface LoanRepository extends JpaRepository<Loan,Long> {
     int findFineByLoanId(int loanId);
 
     Loan findLoanbyLoanId(int loanId);
+
+    List<Loan> findByLoanType(LoanType loanType);
 }
