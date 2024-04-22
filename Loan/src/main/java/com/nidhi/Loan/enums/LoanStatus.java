@@ -13,8 +13,7 @@ public enum LoanStatus {
     REQUESTEDFORFORECLOSURE(),
     FORECLOSED(),
     CLOSED();
-    public Date startDate;
-    private LoanStatus (Date startDate){this.startDate=startDate;}
+
 }
 /*
 Applied - User has applied
