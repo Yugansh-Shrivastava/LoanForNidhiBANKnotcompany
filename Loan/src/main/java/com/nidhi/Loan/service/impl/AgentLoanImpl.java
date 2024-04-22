@@ -26,20 +26,14 @@ public class AgentLoanImpl implements AgentLoanService {
     public void approveLoanClosure(int loanId) {
 
     }
-
     @Override
     public void cancelLoan(int loanId) {
-
-    }
-
-    @Override
-    public void cancelLoan(Long loanId) {
          loanRepo.deleteById(loanId);
 
     }
 
     @Override
-    public void cancelLoanApplication(Long loanId) {
+    public void cancelLoanApplication(int loanId) {
         // For User
         loanRepo.deleteById(loanId);
     }

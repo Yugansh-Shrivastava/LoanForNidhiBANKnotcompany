@@ -13,7 +13,7 @@ public interface AgentLoanService {
     void changeLoanStatus(int loanId);
     void approveLoanClosure(int loanId);// cancel loan + change repayment term
     void cancelLoan(int loanId); // will call delete Loan
-    void cancelLoanApplication(Long loanId); // (Non-approved)
+    void cancelLoanApplication(int loanId); // (Non-approved)
     List<Loan> getLoanByLoanType(LoanType loanType);
     String getLoanCalculationByLoanType(LoanType loanType);
     void setLoanCalculationByLoanType(double interestRate);
