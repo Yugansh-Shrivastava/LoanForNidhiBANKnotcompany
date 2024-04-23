@@ -9,11 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-<<<<<<< HEAD
+
 public interface LoanRepository extends JpaRepository<Loan, Integer> {
-=======
-public interface LoanRepository extends JpaRepository<Loan,Integer> {
->>>>>>> d6388f441d02194fda510c99b0579686e41bdf1b
+
     int findLoanAmountByLoanId(int loanId);
 
     LoanStatus findStatusByLoanId(int loanId);
@@ -25,4 +23,6 @@ public interface LoanRepository extends JpaRepository<Loan,Integer> {
     Loan findLoanbyLoanId(int loanId);
 
     List<Loan> findByLoanType(LoanType loanType);
+
+    List<Loan> findByLoanStatus(LoanStatus status);
 }

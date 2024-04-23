@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public interface AgentLoanService {
     List<Loan> getLoanByLoanStatus(LoanStatus status);
-    void changeLoanStatus(int loanId);
+    void changeLoanStatus(int loanId, LoanStatus loanStatus);
     void approveLoanClosure(int loanId);// cancel loan + change repayment term
     void cancelLoan(int loanId); // will call close Loan
 
