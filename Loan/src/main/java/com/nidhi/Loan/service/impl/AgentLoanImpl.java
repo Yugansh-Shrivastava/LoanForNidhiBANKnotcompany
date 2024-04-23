@@ -14,7 +14,8 @@ public class AgentLoanImpl implements AgentLoanService {
     LoanRepository loanRepo;
     @Override
     public List<Loan> getLoanByLoanStatus(LoanStatus status) {
-        return null;
+
+        return loanRepo.findByLoanStatus(status);
     }
 
     @Override

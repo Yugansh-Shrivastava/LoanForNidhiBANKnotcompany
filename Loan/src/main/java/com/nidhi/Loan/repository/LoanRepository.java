@@ -21,4 +21,6 @@ public interface LoanRepository extends JpaRepository<Loan,Integer> {
     Loan findLoanbyLoanId(int loanId);
 
     List<Loan> findByLoanType(LoanType loanType);
+
+    List<Loan> findByLoanStatus(LoanStatus status);
 }
