@@ -33,25 +33,21 @@ public class AgentLoanImpl implements AgentLoanService {
     }
 
     @Override
-    public void cancelLoanApplication(int loanId) {
-        // For User
-        loanRepo.deleteById(loanId);
-    }
-
-    @Override
     public List<Loan> getLoanByLoanType(LoanType loanType) {
         //questionable
        return loanRepo.findByLoanType(loanType);
     }
 
     @Override
-    public String getLoanCalculationByLoanType(LoanType loanType) {
+    public String getLoanCalcDetailsByLoanType(LoanType loanType) {
 
-        return "loanRepo.";
+        String CalcDetails = "LoanType:"+loanType+"Interest rate:"+loanType.getLoanInterestRate();
+        return CalcDetails;
     }
 
     @Override
-    public void setLoanCalculationByLoanType(double interestRate) {
+    public void setLoanCalcDetailsByLoanType(LoanType loanType,double interestRate) {
+        loanType.setLoanInterestRate(interestRate); // request to be sent to admin
 
     }
 }
