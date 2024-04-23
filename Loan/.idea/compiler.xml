@@ -9,6 +9,11 @@
         <module name="Loan" />
       </profile>
     </annotationProcessing>
+
+    <bytecodeTargetLevel>
+      <module name="Loan" target="19" />
+    </bytecodeTargetLevel>
+
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
