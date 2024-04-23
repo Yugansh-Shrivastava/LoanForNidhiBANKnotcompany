@@ -9,5 +9,5 @@ public enum LoanType {
     Appliance(7),
     Home(4);
     public double loanInterestRate;
-    private LoanType(double loanInterestRate){this.loanInterestRate=loanInterestRate;}
+    LoanType(double loanInterestRate){this.loanInterestRate=loanInterestRate;}
 }
