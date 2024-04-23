@@ -25,7 +25,7 @@ public class AgentLoanImpl implements AgentLoanService {
 
     @Override
     public void approveLoanClosure(int loanId) {
-        LoanStatus status = LoanStatus.valueOf("FORECLOSED");
+        LoanStatus status = LoanStatus.valueOf("FORECLOSED"); // check if else loanstatus s requested for closure else this user has not applied for closure
         changeLoanStatus(loanId,status);
     }
     @Override
