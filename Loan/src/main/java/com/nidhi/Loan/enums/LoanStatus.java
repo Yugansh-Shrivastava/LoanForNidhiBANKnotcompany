@@ -5,16 +5,14 @@ import java.util.Date;
 
 @NoArgsConstructor
 public enum LoanStatus {
-    APPLIED(),
-    APPROVED(),
-    SANCTIONED(),
-    PENDING(),
-    REJECTED(),
-    REQUESTEDFORFORECLOSURE(),
-    FORECLOSED(),
-    CLOSED();
-    public Date startDate;
-    private LoanStatus (Date startDate){this.startDate=startDate;}
+    APPLIED,
+    APPROVED,
+    SANCTIONED,
+    PENDING,
+    REJECTED,
+    REQUESTEDFORFORECLOSURE,
+    FORECLOSED,
+    CLOSED;
 }
 /*
 Applied - User has applied
