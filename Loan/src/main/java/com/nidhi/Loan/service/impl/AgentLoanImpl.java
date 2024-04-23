@@ -14,22 +14,24 @@ public class AgentLoanImpl implements AgentLoanService {
     LoanRepository loanRepo;
     @Override
     public List<Loan> getLoanByLoanStatus(LoanStatus status) {
-
         return loanRepo.findByLoanStatus(status);
     }
 
     @Override
-    public void changeLoanStatus(int loanId) {
-
+    public void changeLoanStatus(int loanId, LoanStatus loanStatus) {
+        Loan loan =loanRepo.findById(loanId).orElseThrow();
+        loan.setStatus(loanStatus);
     }
 
     @Override
     public void approveLoanClosure(int loanId) {
-
+        LoanStatus status = LoanStatus.valueOf("FORECLOSED");
+        changeLoanStatus(loanId,status);
     }
     @Override
     public void cancelLoan(int loanId) {
-         loanRepo.deleteById(loanId);
+        LoanStatus status = LoanStatus.valueOf("CLOSED");
+        changeLoanStatus(loanId,status);
 
     }
 
@@ -48,7 +50,7 @@ public class AgentLoanImpl implements AgentLoanService {
 
     @Override
     public void setLoanCalcDetailsByLoanType(LoanType loanType,double interestRate) {
-        loanType.setLoanInterestRate(interestRate); // request to be sent to admin
+        loanType.setLoanInterestRate(interestRate);
 
     }
 }
