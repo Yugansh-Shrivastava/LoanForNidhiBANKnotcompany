@@ -11,7 +11,7 @@ public class UserLoanServiceImpl implements UserLoanService {
     @Autowired
     LoanRepository loanRepository;
     @Override
-    public int maxApplicableLoan(int loanId) {// For User
+    public int maxApplicableLoan(int loanId) {// For User must take acc id as input later
         //return (loanRepository.findAccountBalanceByLoanId(loanId)*10);
         return loanRepository.findLoanAmountByLoanId(loanId);
     }
