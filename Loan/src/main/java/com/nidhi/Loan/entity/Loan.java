@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,17 +20,19 @@ public class Loan {
     private int loanId;
     private int loanAmount;
     private int rePaymentTerm;
+    private Date startDate;
     private double interestRate;
     private int EMI;
     private int fine;
+    // how is no of repayment calculated, where is gap between each repayment term recorded
     @Enumerated(EnumType.STRING)
     private LoanType loanType;
     @Enumerated(EnumType.STRING)
     private LoanStatus status;
-
     public void setInterestRate(LoanType loanType) {
         this.interestRate = loanType.loanInterestRate;
     }
+
 //        @ManyToOne
 //    @JoinColumn
 //    private Accounts account;
