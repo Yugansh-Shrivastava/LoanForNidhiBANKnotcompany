@@ -19,8 +19,9 @@ public class AdminLoanImpl implements AdminLoanService {
     }
 
     @Override
-    public List<Loan> getLoanRequests(LoanStatus status) {
+    public List<Loan> getLoanRequests() {
         return loanRepo.findAll();
+
     }
 
     @Override
