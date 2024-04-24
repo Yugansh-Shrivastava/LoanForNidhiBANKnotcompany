@@ -23,7 +23,6 @@ public class AdminLoanImpl implements AdminLoanService {
         return loanRepo.findAll();
 
     }
-
     @Override
     public List<Loan> getLoanRequests(LoanType loanType) {
         return loanRepo.findByLoanType(loanType);
