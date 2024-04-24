@@ -14,7 +14,12 @@ public class AgentLoanImpl implements AgentLoanService {
     LoanRepository loanRepo;
     @Override
     public List<Loan> getLoanByLoanStatus(LoanStatus status) {
-        return loanRepo.findByLoanStatus(status);
+        if(loanRepo.existsByLoanStatus(status)) {
+            return loanRepo.findByLoanStatus(status);
+        }
+        else {
+            return null;
+        }
     }
 
     @Override
@@ -25,11 +30,16 @@ public class AgentLoanImpl implements AgentLoanService {
 
     @Override
     public void approveLoanClosure(int loanId) {
-        LoanStatus status = LoanStatus.valueOf("FORECLOSED"); // check if else loanstatus s requested for closure else this user has not applied for closure
-        changeLoanStatus(loanId,status);
+        Loan lon = loanRepo.findById(loanId).orElseThrow();
+        LoanStatus status =lon.getStatus();
+        if(status.equals("REQUESTEDFORFORECLOSURE")) {
+            status = LoanStatus.valueOf("FORECLOSED");
+            changeLoanStatus(loanId,status);
+        }
     }
     @Override
     public void cancelLoan(int loanId) {
+        If
         LoanStatus status = LoanStatus.valueOf("CLOSED");
         changeLoanStatus(loanId,status);
 

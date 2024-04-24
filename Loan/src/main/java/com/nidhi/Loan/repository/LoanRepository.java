@@ -24,4 +24,6 @@ public interface LoanRepository extends JpaRepository<Loan, Integer> {
     List<Loan> findByLoanType(LoanType loanType);
 
     List<Loan> findByLoanStatus(LoanStatus status);
+
+    Boolean existsByLoanStatus(LoanStatus status);
 }
