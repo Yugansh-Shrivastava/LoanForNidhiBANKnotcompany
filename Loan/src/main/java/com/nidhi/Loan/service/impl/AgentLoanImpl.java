@@ -39,7 +39,7 @@ public class AgentLoanImpl implements AgentLoanService {
     }
     @Override
     public void cancelLoan(int loanId) {
-        If
+
         LoanStatus status = LoanStatus.valueOf("CLOSED");
         changeLoanStatus(loanId,status);
 
