@@ -11,7 +11,7 @@ import java.util.List;
 public interface AdminLoanService {
     List<Loan> getLoanRequestsByStatus(LoanStatus status);
     List<Loan> getLoanRequests(); // all requests differentiated by status
-    List<Loan> getLoanRequests(LoanType loanType); // might convert this into chart form
+    List<Loan> getLoanRequestsByType(LoanType loanType); // might convert this into chart form
 
 
 //    Get Loan Requests By Manager ID (Loan req differentiated by managers)	X
